@@ -1,0 +1,49 @@
+{
+    "creditcardmsgsrsv1": {
+	"ccstmttrnrs": [
+	    {
+		"ccstmtrs": {
+		    "curdef": "JPY",
+		    "ccacctfrom": {
+			"acctid": "****-****12-345**"
+		    },
+		    "banktranlist": {
+			"dtstart": "20141206000000[+0900:JST]",
+			"dtend": "20141219000000[+0900:JST]",
+			"stmttrn": [
+			    {
+				"trntype": "PAYMENT",
+				"dtposted": "20141206000000[+0900:JST]",
+				"trnamt": -5000,
+				"fitid": "20141206000002000000",
+				"name": "コストコ",
+				"memo": "-"
+			    },
+			    {
+				"trntype": "PAYMENT",
+				"dtposted": "20141219000000[+0900:JST]",
+				"trnamt": -2500,
+				"fitid": "20141219000002000000",
+				"name": "ビックカメラ",
+				"memo": "-"
+			    },
+			    {
+				"trntype": "DIRECTDEBIT",
+				"dtposted": "20150204000000[+0900:JST]",
+				"trnamt": 7500,
+				"fitid": "20150204000002100000",
+				"name": "セゾンカード",
+				"memo": "-"
+			    }
+			]
+		    },
+		    "ledgerbal": {
+			"balamt": 0,
+			"dtasof": "20150215000000[+0900:JST]"
+		    },
+		    "mktginfo": "セゾンカード　みずほマイレージクラブカード《セゾン》ａｍｅｘ"
+		}
+	    }
+	]
+    }
+}

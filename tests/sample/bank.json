@@ -1,0 +1,106 @@
+{
+    "bankmsgsrsv1": {
+	"stmttrnrs": [
+            {
+		"stmtrs": {
+		    "curdef": "JPY",
+		    "bankacctfrom": {
+			"bankid": "0038",
+			"branchid": "100",
+			"acctid": "1234567-01",
+			"accttype": "SAVINGS"
+		    },
+		    "banktranlist": {
+			"dtstart": "20150101000000[+0900:JST]",
+			"dtend": "20150215000000[+0900:JST]",
+			"stmttrn": [
+			    {
+				"trntype": "XFER",
+				"dtposted": "20150119000000[+0900:JST]",
+				"trnamt": 50000,
+				"fitid": "20150118000100000000",
+				"name": "ｓｂｉハイブリッド預金",
+				"memo": "-"
+			    },
+			    {
+				"trntype": "ATM",
+				"dtposted": "20150121000000[+0900:JST]",
+				"trnamt": -1000,
+				"fitid": "20150121000100000000",
+				"name": "ａｔｍ　●●●●",
+				"memo": "-"
+			    },
+			    {
+				"trntype": "DIRECTDEP",
+				"dtposted": "20150126000000[+0900:JST]",
+				"trnamt": -5000,
+				"fitid": "20150126000100000000",
+				"name": "振込＊●●●●",
+				"memo": "-"
+			    }
+			]
+		    },
+		    "ledgerbal": {
+			"balamt": "123456",
+			"dtasof": "20150215000000[+0900:JST]"
+		    },
+		    "mktginfo": "住信sbiネット銀行　本店　代表　円普通"
+		}
+            },
+            {
+		"stmtrs": {
+		    "curdef": "JPY",
+		    "bankacctfrom": {
+			"bankid": "0038",
+			"branchid": "100",
+			"acctid": "1234567-00",
+			"accttype": "SAVINGS"
+		    },
+		    "banktranlist": {
+			"dtstart": "20150101000000[+0900:JST]",
+			"dtend": "20150215000000[+0900:JST]",
+			"stmttrn": [
+			    {
+				"trntype": "DEBIT",
+				"dtposted": "20150115000000[+0900:JST]",
+				"trnamt": 123,
+				"fitid": "20150115002100000000",
+				"name": "振替　ｓｂｉ証券",
+				"memo": "-"
+			    },
+			    {
+				"trntype": "INT",
+				"dtposted": "20150118000000[+0900:JST]",
+				"trnamt": 12,
+				"fitid": "20150118002100000000",
+				"name": "利息",
+				"memo": "-"
+			    },
+			    {
+				"trntype": "XFER",
+				"dtposted": "20150119000000[+0900:JST]",
+				"trnamt": -50000,
+				"fitid": "20150118002100000001",
+				"name": "普通　代表口座",
+				"memo": "-"
+			    },
+			    {
+				"trntype": "DEBIT",
+				"dtposted": "20150213000000[+0900:JST]",
+				"trnamt": 12345,
+				"fitid": "20150213002100000000",
+				"name": "振替　ｓｂｉ証券",
+				"memo": "-"
+			    }
+			]
+		    },
+		    "ledgerbal": {
+			"balamt": 1234567,
+			"dtasof": "20150215000000[+0900:JST]"
+		    },
+		    "mktginfo": "住信sbiネット銀行　本店　代表　sbiハイブリッド"
+		}
+            }
+	]
+    }
+}

@@ -1,0 +1,704 @@
+{
+    "invstmtmsgsrsv1": {
+	"invstmttrnrs": [
+	    {
+		"invstmtrs": {
+		    "dtasof": "20150215000000[+0900:JST]",
+		    "curdef": "JPY",
+		    "invacctfrom": {
+			"brokerid": "0988",
+			"acctid": "z00-1234567"
+		    },
+		    "invtranlist": {
+			"dtstart": "20150101000000[+0900:JST]",
+			"dtend": "20150215000000[+0900:JST]",
+			"reinvest": [
+			    {
+				"invtran": {
+				    "fitid": "20150209000001000000",
+				    "dttrade": "20150209000000[+0900:JST]"
+				},
+				"secid": {
+				    "uniqueid": "64313104",
+				    "uniqueidtype": "JP:ITAJ"
+				},
+				"incometype": "DIV",
+				"total": -1428.0714,
+				"subacctsec": "CASH",
+				"units": 714,
+				"unitprice": 2.0001
+			    },
+			    {
+				"invtran": {
+				    "fitid": "20150209000001000001",
+				    "dttrade": "20150209000000[+0900:JST]"
+				},
+				"secid": {
+				    "uniqueid": "64314104",
+				    "uniqueidtype": "JP:ITAJ"
+				},
+				"incometype": "DIV",
+				"total": -581.3156,
+				"subacctsec": "CASH",
+				"units": 404,
+				"unitprice": 1.4389
+			    }
+			],
+			"invstock": [{
+			    "invest": {
+				"invtran": {
+				    "fitid": "20150213000001000000",
+				    "dttrade": "20150213000000[+0900:JST]"
+				},
+				"secid": {
+				    "uniqueid": "5020",
+				    "uniqueidtype": "JP:SIC"
+				},
+				"units": -100,
+				"unitprice": 544.1,
+				"taxes": 10,
+				"fees": 132,
+				"total": 54268,
+				"subacctsec": "CASH",
+				"subacctfund": "CASH"
+			    },
+			    "selltype": "SELL"
+			}],
+			"invbanktran": [
+			    {
+				"stmttrn": {
+				    "trntype": "INT",
+				    "dtposted": "20150115000000[+0900:JST]",
+				    "trnamt": 1594,
+				    "fitid": "20150115000000000000",
+				    "name": "利金収益金",
+				    "memo": "第４３回個人向け利付国債（変動・１０年）"
+				},
+				"subacctfund": "CASH"
+			    },
+			    {
+				"stmttrn": {
+				    "trntype": "DEBIT",
+				    "dtposted": "20150115000000[+0900:JST]",
+				    "trnamt": -1679,
+				    "fitid": "20150115000000000001",
+				    "name": "振替　ｓｂｉ証券",
+				    "memo": "sbiハイブリッド預金へ自動振替出金"
+				},
+				"subacctfund": "CASH"
+			    },
+			    {
+				"stmttrn": {
+				    "trntype": "OTHER",
+				    "dtposted": "20150119000000[+0900:JST]",
+				    "trnamt": 50000,
+				    "fitid": "20150119000000000000",
+				    "name": "即時入金　●●●●",
+				    "memo": "-"
+				},
+				"subacctfund": "CASH"
+			    },
+			    {
+				"stmttrn": {
+				    "trntype": "DEBIT",
+				    "dtposted": "20150120000000[+0900:JST]",
+				    "trnamt": -50000,
+				    "fitid": "20150120000000000000",
+				    "name": "振替　ｓｂｉ証券",
+				    "memo": "sbiハイブリッド預金へ自動振替出金"
+				},
+				"subacctfund": "CASH"
+			    },
+			    {
+				"stmttrn": {
+				    "trntype": "DIV",
+				    "dtposted": "20150205000000[+0900:JST]",
+				    "trnamt": 917,
+				    "fitid": "20150205000000000000",
+				    "name": "株式配当金",
+				    "memo": "キユーピー"
+				},
+				"subacctfund": "CASH"
+			    },
+			    {
+				"stmttrn": {
+				    "trntype": "DEBIT",
+				    "dtposted": "20150205000000[+0900:JST]",
+				    "trnamt": -917,
+				    "fitid": "20150205000000000001",
+				    "name": "振替　ｓｂｉ証券",
+				    "memo": "sbiハイブリッド預金へ自動振替出金"
+				},
+				"subacctfund": "CASH"
+			    }
+			]
+		    },
+		    "invposlist": {
+			"posstock": [
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "2402",
+					"uniqueidtype": "JP:SIC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 100,
+				    "unitprice": 865,
+				    "mktval": 86500,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "37900"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "2809",
+					"uniqueidtype": "JP:SIC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 100,
+				    "unitprice": 2750,
+				    "mktval": 275000,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "185900"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "3048",
+					"uniqueidtype": "JP:SIC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 100,
+				    "unitprice": 1328,
+				    "mktval": 132800,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "97900"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "4464",
+					"uniqueidtype": "JP:SIC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 100,
+				    "unitprice": 670,
+				    "mktval": 67000,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "20000"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "4578",
+					"uniqueidtype": "JP:SIC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 100,
+				    "unitprice": 3641,
+				    "mktval": 364100,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "120900"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "4951",
+					"uniqueidtype": "JP:SIC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 100,
+				    "unitprice": 1021,
+				    "mktval": 102100,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "2400"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "7951",
+					"uniqueidtype": "JP:SIC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 100,
+				    "unitprice": 1796,
+				    "mktval": 179600,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "103200"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "8306",
+					"uniqueidtype": "JP:SIC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 100,
+				    "unitprice": 707.1,
+				    "mktval": 70710,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "12810"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "9449",
+					"uniqueidtype": "JP:SIC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 100,
+				    "unitprice": 1205,
+				    "mktval": 120500,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "16900"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "9740",
+					"uniqueidtype": "JP:SIC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 100,
+				    "unitprice": 1248,
+				    "mktval": 124800,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "41900"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "8267",
+					"uniqueidtype": "JP:SIC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 100,
+				    "unitprice": 1307.5,
+				    "mktval": 130750,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "13150"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "9475",
+					"uniqueidtype": "JP:SIC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 100,
+				    "unitprice": 836,
+				    "mktval": 83600,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "10100"
+				}
+			    }
+			],
+			"posmf": [
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "0331409a",
+					"uniqueidtype": "JP:ITAJ"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 70992,
+				    "unitprice": 2.5363,
+				    "mktval": 180057,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "94825"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "0331709a",
+					"uniqueidtype": "JP:ITAJ"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 74278,
+				    "unitprice": 2.6677,
+				    "mktval": 198151,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "116691"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "0331809a",
+					"uniqueidtype": "JP:ITAJ"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 341683,
+				    "unitprice": 1.4272,
+				    "mktval": 487649,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "157584"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "6431108c",
+					"uniqueidtype": "JP:ITAJ"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 95534,
+				    "unitprice": 1.7066,
+				    "mktval": 163038,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "54588"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "64311104",
+					"uniqueidtype": "JP:ITAJ"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 33094,
+				    "unitprice": 1.599,
+				    "mktval": 52917,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "24864"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "6431208c",
+					"uniqueidtype": "JP:ITAJ"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 138952,
+				    "unitprice": 2.4585,
+				    "mktval": 341613,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "120457"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "64312104",
+					"uniqueidtype": "JP:ITAJ"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 238532,
+				    "unitprice": 1.0921,
+				    "mktval": 260500,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "12928"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "64313104",
+					"uniqueidtype": "JP:ITAJ"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 895681,
+				    "unitprice": 2.0282,
+				    "mktval": 1816620,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "1018121"
+				}
+			    },
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "64314104",
+					"uniqueidtype": "JP:ITAJ"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 364009,
+				    "unitprice": 1.4443,
+				    "mktval": 525738,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "196201"
+				}
+			    }
+			],
+			"posdebt": [
+			    {
+				"invpos": {
+				    "secid": {
+					"uniqueid": "d14e32c856774c9fdba4853cef3da05b",
+					"uniqueidtype": "JP:HC"
+				    },
+				    "heldinacct": "CASH",
+				    "postype": "LONG",
+				    "units": 1000000,
+				    "unitprice": 100,
+				    "mktval": 1000000,
+				    "dtpriceasof": "20150215000000[+0900:JST]",
+				    "memo": "0"
+				}
+			    }
+			]
+		    },
+		    "invbal": {
+			"availcash": "120187",
+			"marginbalance": "52345",
+			"shortbalance": "0"
+		    },
+		    "mktginfo": "sbi証券"
+		}
+	    }]
+    },
+    "seclistmsgsrsv1": {
+	"seclist": [
+	    {
+		"stockinfo": [
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "2402",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "アマナ"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "2809",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "キユーピー"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "3048",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "ビックカメラ"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "4464",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "ソフト９９"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "4578",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "大塚ｈｄ"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "4951",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "エステー"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "7951",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "ヤマハ"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "8306",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "三菱ｕｆｊ"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "9449",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "ｇｍｏ"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "9740",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "ｃｓｐ"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "8267",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "イオン"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "9475",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "昭文社"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "5020",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "ｊｘホールディングス"
+			}
+		    }
+		],
+		"mfinfo": [
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "0331409a",
+				"uniqueidtype": "JP:ITAJ"
+			    },
+			    "secname": "三菱ｕｆｊ−ｅｍａｘｉｓ国内リートインデックス"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "0331709a",
+				"uniqueidtype": "JP:ITAJ"
+			    },
+			    "secname": "三菱ｕｆｊ−ｅｍａｘｉｓ先進国リートインデックス"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "0331809a",
+				"uniqueidtype": "JP:ITAJ"
+			    },
+			    "secname": "三菱ｕｆｊ−ｅｍａｘｉｓ新興国株式インデックス"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "6431108c",
+				"uniqueidtype": "JP:ITAJ"
+			    },
+			    "secname": "三井住友ｔａｍ−ｓｍｔ新興国債券インデックス・オープン"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "64311104",
+				"uniqueidtype": "JP:ITAJ"
+			    },
+			    "secname": "三井住友ｔａｍ−日本株式インデックスｅ"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "6431208c",
+				"uniqueidtype": "JP:ITAJ"
+			    },
+			    "secname": "三井住友ｔａｍ−ｓｍｔ新興国株式インデックス・オープン"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "64312104",
+				"uniqueidtype": "JP:ITAJ"
+			    },
+			    "secname": "三井住友ｔａｍ−日本債券インデックスｅ"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "64313104",
+				"uniqueidtype": "JP:ITAJ"
+			    },
+			    "secname": "三井住友ｔａｍ−外国株式インデックスｅ"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "64314104",
+				"uniqueidtype": "JP:ITAJ"
+			    },
+			    "secname": "三井住友ｔａｍ−外国債券インデックスｅ"
+			}
+		    }
+		],
+		"debtinfo": [{
+		    "secinfo": {
+			"secid": {
+			    "uniqueid": "d14e32c856774c9fdba4853cef3da05b",
+			    "uniqueidtype": "JP:HC"
+			},
+			"secname": "第４３回個人向け利付国債（変動・１０年）"
+		    },
+		    "parvalue": 100,
+		    "debttype": "COUPON",
+		    "couponrt": 0.310,
+		    "dtmat": "20230715000000[+0900:JST]"
+		}]
+	    }
+	]
+    }
+}

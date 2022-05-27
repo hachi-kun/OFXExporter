@@ -1,0 +1,83 @@
+[
+  {
+    "Balance": 40019,
+    "Date": "2022/01/11",
+    "Desc": "クレジット",
+    "Id": 1,
+    "Income": 0,
+    "Memo": "",
+    "Outgo": 64693
+  },
+  {
+    "Balance": 41019,
+    "Date": "2022/01/19",
+    "Desc": "カ－ド",
+    "Id": 2,
+    "Income": 1000,
+    "Memo": "",
+    "Outgo": 0
+  },
+  {
+    "Balance": 42004,
+    "Date": "2022/01/19",
+    "Desc": "カ－ド",
+    "Id": 3,
+    "Income": 985,
+    "Memo": "",
+    "Outgo": 0
+  },
+  {
+    "Balance": 42769,
+    "Date": "2022/01/21",
+    "Desc": "カ－ド",
+    "Id": 4,
+    "Income": 765,
+    "Memo": "",
+    "Outgo": 0
+  },
+  {
+    "Balance": 43764,
+    "Date": "2022/01/21",
+    "Desc": "カ－ド",
+    "Id": 5,
+    "Income": 995,
+    "Memo": "",
+    "Outgo": 0
+  },
+  {
+    "Balance": 38964,
+    "Date": "2022/01/26",
+    "Desc": "口座振替４",
+    "Id": 7,
+    "Income": 0,
+    "Memo": "保険",
+    "Outgo": 4800
+  },
+  {
+    "Balance": 48869,
+    "Date": "2022/01/27",
+    "Desc": "カ－ド",
+    "Id": 8,
+    "Income": 9905,
+    "Memo": "",
+    "Outgo": 0
+  },
+  {
+    "Balance": 53039,
+    "Date": "2022/01/27",
+    "Desc": "カ－ド",
+    "Id": 9,
+    "Income": 4170,
+    "Memo": "",
+    "Outgo": 0
+  },
+  {
+    "Balance": 52039,
+    "Date": "2022/01/27",
+    "Desc": "カ－ド",
+    "Id": 10,
+    "Income": 0,
+    "Memo": "",
+    "Outgo": 1000
+  }
+]

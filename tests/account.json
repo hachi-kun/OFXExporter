@@ -1,0 +1,8 @@
+{
+    "価格OFX": {
+        "financial": "StockHistoryFilter",
+        "store": "99999",
+        "account": "99999",
+        "autogen": false
+    }
+}

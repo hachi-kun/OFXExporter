@@ -1,0 +1,77 @@
+{
+    "invstmtmsgsrsv1": {
+	"invstmttrnrs": [{
+            "invstmtrs": {
+		"dtasof": "20220414000000[+0900:JST]",
+		"curdef": "JPY",
+		"invacctfrom": {
+		    "brokerid": "OFXExchanger",
+		    "acctid": "00000"
+		},
+		"invposlist": {
+		    "posstock": [
+			{
+			    "invpos": {
+				"secid": {
+				    "uniqueid": "7203",
+				    "uniqueidtype": "JP:SIC"
+				},
+				"heldinacct": "CASH",
+				"postype": "LONG",
+				"units": 0,
+				"unitprice": 2131.5,
+				"mktval": 0,
+				"dtpriceasof": "20220414000000[+0900:JST]"
+			    }
+			},
+			{
+			    "invpos": {
+				"secid": {
+				    "uniqueid": "9984",
+				    "uniqueidtype": "JP:SIC"
+				},
+				"heldinacct": "CASH",
+				"postype": "LONG",
+				"units": 0,
+				"unitprice": 5762,
+				"mktval": 0,
+				"dtpriceasof": "20220414000000[+0900:JST]"
+			    }
+			}
+		    ]
+		},
+		"invbal": {
+		    "availcash": 0,
+		    "marginbalance": 0,
+		    "shortbalance": 0
+		}
+            }
+	}]
+    },
+    "seclistmsgsrsv1": {
+	"seclist": [
+	    {
+		"stockinfo": [
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "7203",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "トヨタ自動車"
+			}
+		    },
+		    {
+			"secinfo": {
+			    "secid": {
+				"uniqueid": "9984",
+				"uniqueidtype": "JP:SIC"
+			    },
+			    "secname": "ソフトバンクグループ"
+			}
+		    }
+		]
+	    }
+	]
+    }
+}
