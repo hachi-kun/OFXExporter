@@ -121,6 +121,45 @@ class JibunBankFilter(BankFilter):
 
         return items
 
+class  AUCardWalletFilter(BankFilter):
+    def __init__(self):
+        super().__init__()
+        self.name = 'au PAY プリペイドカード'
+        self.date_format = '%Y/%m/%d %H:%M'
+
+        self.csv_format = [
+            ('', None),
+            ('利用日時', 'Date'),
+            ('利用店舗', 'Desc'),
+            ('種別', 'Type'),
+            ('利用額（円）', 'Usage'),
+            ('キャンペーン名:キャンペーン額（円）', None),
+            ('外貨金額', None),
+            ('交換レート', None),
+            ('備考', 'Memo'),
+        ]
+
+    def field_convert(self, field, value):
+        if field in ['Type']:
+            if value in ['払出', '支払']:
+                return 'out'
+            else:
+                return 'in'
+        else:
+            return super().field_convert(field, value)
+
+    def gen_stmttrn(self, data, financial, account):
+
+        for value in data:
+            if value['Type'] == 'out':
+                value['Outgo'] = value['Usage']
+            else:
+                value['Income'] = value['Usage']
+
+        # 後処理に渡す
+        return super().gen_stmttrn(data, financial, account)
+
+
 # -------------------------------------
 
 

@@ -13,6 +13,8 @@ OFXExporterは、以下の金融機関のcsvファイルをOFXファイルに変
 
 - 三菱東京UFJ-VISA
 - イオンカード
+- au PAY カード
+- au PAY プリペイドカード
 
 - スマートレシート
 - 価格OFX

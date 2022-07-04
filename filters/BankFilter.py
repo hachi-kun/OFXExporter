@@ -41,9 +41,9 @@ class BankFilter(FinanceFilter):
 
         # fitidを追加する
         item_list[0]['fitid'] = gen_fitid(item_list[0][key], 0)
-        fitid = 1
+        fitid = 0
         for index in range(1, len(item_list)):
-            if item_list[index][key] == item_list[index-1][key]:
+            if item_list[index][key].date() == item_list[index-1][key].date():
                 fitid = fitid + 1
             else:
                 fitid = 0
@@ -164,7 +164,7 @@ class BankFilter(FinanceFilter):
         if field in ['Date']:
             return self.to_datetime(value)
 
-        elif field in ['Income', 'Balance', 'Outgo']:
+        elif field in ['Income', 'Balance', 'Outgo', 'Usage']:
             value = value.replace(',', '')
             return int(value)
 
