@@ -3,11 +3,11 @@
 
 """
 """
+import binascii
 
 from datetime import datetime
 
 from filters.FinanceFilter import FilterError, FinanceFilter
-
 
 class BankFilter(FinanceFilter):
     def __init__(self):
@@ -33,14 +33,27 @@ class BankFilter(FinanceFilter):
         }
 
     def append_fitid(self, item_list, key):
-        def gen_fitid(x, y):
-            return x.strftime('%Y%m%d') + str(y).zfill(4)
+        def gen_fitid(x, y, z):
+            return x.strftime('%Y%m%d') + '-' + str(y).zfill(3) + '-' + z
+
+        def gen_hash(x):
+            data = ''
+            if x.get('Desc') is not None:
+                data = data + x['Desc']
+            if x.get('Income') is not None:
+                data = data + str(x['Income'])
+            if x.get('Outgo') is not None:
+                data = data + str(x['Outgo'])
+
+            return (binascii.crc32(data.encode(), 0) & 0xffffffff)
 
         # リストをソートする
         item_list.sort(key=lambda x: x[key])
 
         # fitidを追加する
-        item_list[0]['fitid'] = gen_fitid(item_list[0][key], 0)
+        item_list[0]['fitid'] = gen_fitid(item_list[0][key],
+                                          0,
+                                          str(gen_hash(item_list[0])))
         fitid = 0
         for index in range(1, len(item_list)):
             if item_list[index][key].date() == item_list[index-1][key].date():
@@ -48,7 +61,10 @@ class BankFilter(FinanceFilter):
             else:
                 fitid = 0
 
-            item_list[index]['fitid'] = gen_fitid(item_list[index][key], fitid)
+            gen_hash(item_list[index])
+            item_list[index]['fitid'] = gen_fitid(item_list[index][key],
+                                                  fitid,
+                                                  str(gen_hash(item_list[index])))
 
         return item_list
 
