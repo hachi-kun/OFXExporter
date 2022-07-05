@@ -9,6 +9,7 @@ import configparser
 import csv
 import json
 import os
+import sys
 import pprint
 import time
 import traceback
@@ -392,6 +393,10 @@ class OFXExporter(OFXExporterGui):
 
 
 def main():
+
+    args = sys.argv
+    os.chdir(os.path.dirname(args[0]))
+
     _main = OFXExporter()
 
     _main.start()
