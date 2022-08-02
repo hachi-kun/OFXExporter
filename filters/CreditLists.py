@@ -147,7 +147,7 @@ class  AUCardWalletFilter(CreditFilter):
 
     def field_convert(self, field, value):
         if field in ['Type']:
-            if value in ['払出', '支払']:
+            if value in ['払出', '支払', '支払い']:
                 return 'out'
             else:
                 return 'in'
