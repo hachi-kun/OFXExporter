@@ -9,8 +9,8 @@ import configparser
 import csv
 import json
 import os
-import sys
 import pprint
+import sys
 import time
 import traceback
 from datetime import datetime, timedelta, timezone
@@ -46,7 +46,7 @@ class CSVPack(dict):
                 # ファイルの文字列コードの判定
                 with open(name, 'rb') as f:
                     res = detect(f.read())
-                    if res['encoding'] in ['utf-8', 'utf-16', 'utf-32',
+                    if res['encoding'] in ['utf-8', 'utf-16', 'utf-32', 'UTF-8-SIG',
                                            'EUC-JP', 'SHIFT_JIS', 'ISO-2022-JP']:
                         encoding = res['encoding']
                     else:

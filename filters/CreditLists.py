@@ -4,6 +4,8 @@
 """ クレジット系 変換フィルタ
 """
 
+import re
+
 from filters.CreditFilter import CreditFilter
 
 
@@ -111,7 +113,8 @@ class AEONCardFilter(CreditFilter):
         else:
             return super().field_convert(field, value)
 
-class  AUCardFilter(CreditFilter):
+
+class AUCardFilter(CreditFilter):
     def __init__(self):
         super().__init__()
         self.name = 'au PAY カード'
@@ -125,9 +128,10 @@ class  AUCardFilter(CreditFilter):
             ('支払い区分', None),
             ('ご利用者', None),
             ('摘要', 'Memo'),
-            ]
+        ]
 
-class  AUCardWalletFilter(CreditFilter):
+
+class AUCardWalletFilter(CreditFilter):
     def __init__(self):
         super().__init__()
         self.name = 'au PAY プリペイドカード'
@@ -165,7 +169,8 @@ class  AUCardWalletFilter(CreditFilter):
         # 後処理に渡す
         return super().gen_stmttrn(data, financial, account)
 
-class  AUCardFilterUsage(CreditFilter):
+
+class AUCardFilterUsage(CreditFilter):
     def __init__(self):
         super().__init__()
         self.name = 'au PAY カード （支払い請求）'
@@ -178,7 +183,68 @@ class  AUCardFilterUsage(CreditFilter):
             ('利用店名', 'Desc'),
             ('利用金額', 'Outgo'),
             ('摘要', 'Memo')
-            ]
+        ]
+
+
+class AmazonOrderFilter(CreditFilter):
+    def __init__(self):
+        super().__init__()
+        self.name = 'Amazon 注文履歴'
+        self.date_format = '%Y/%m/%d'
+
+        self.csv_format = [
+            ('注文日', 'Date'),
+            ('注文番号', None),
+            ('商品名', 'Desc'),
+            ('付帯情報', 'Memo'),
+            ('価格', None),
+            ('個数', None),
+            ('商品小計', 'Outgo'),
+            ('注文合計', 'Outgo2'),
+            ('お届け先', None),
+            ('状態', 'Status'),
+            ('請求先', None),
+            ('請求額', None),
+            ('クレカ請求日', None),
+            ('クレカ請求額', None),
+            ('クレカ種類', None),
+            ('注文概要URL', None),
+            ('領収書URL', None),
+            ('商品URL', None)
+        ]
+
+        self.outgo_desc = [
+            '（割引）'
+        ]
+
+        self.incoming_type = [
+            '残高に追加済'
+        ]
+
+    def field_convert(self, field, value):
+        if field in ['Outgo2']:
+            return int(value)
+        elif field in ['Status']:
+            return value
+        elif field in ['Memo']:  # コンディション情報を消す
+            if '：' in value:
+                value2 = re.split('：', value)
+                return value2[1][1: -10]
+            else:
+                return value
+        else:
+            return super().field_convert(field, value)
+
+    def gen_stmttrn(self, data, financial, account):
+        for value in data:
+            if value['Desc'] in self.outgo_desc:
+                value['Outgo'] = value['Outgo2']  # 割引情報を記録する
+            elif value.get('Status') and value['Status'] in self.incoming_type:
+                value['Income'] = value.pop('Outgo')
+
+        # 後処理に渡す
+        return super().gen_stmttrn(data, financial, account)
+
 
 # -------------------------------------
 

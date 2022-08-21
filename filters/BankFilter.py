@@ -4,10 +4,10 @@
 """
 """
 import binascii
-
 from datetime import datetime
 
 from filters.FinanceFilter import FilterError, FinanceFilter
+
 
 class BankFilter(FinanceFilter):
     def __init__(self):
@@ -98,10 +98,10 @@ class BankFilter(FinanceFilter):
                 value['dtposted'] = value['Date']
 
             if value.get('Desc') is not None:
-                value['name'] = value['Desc']
+                value['name'] = value['Desc'][:24]
 
             if value.get('Memo') is not None:
-                value['memo'] = value['Memo']
+                value['memo'] = value['Memo'][:24]
 
             if value.get('Balance') is not None:
                 value['balance'] = value['Balance']

@@ -17,6 +17,7 @@ OFXExporterは、以下の金融機関のcsvファイルをOFXファイルに変
 - au PAY プリペイドカード
 
 - スマートレシート
+- アマゾン注文履歴フィルタ(amzOrderHistoryFilter)
 - 価格OFX
 
 ## 開発環境
