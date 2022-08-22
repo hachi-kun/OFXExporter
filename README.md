@@ -15,6 +15,7 @@ OFXExporterは、以下の金融機関のcsvファイルをOFXファイルに変
 - イオンカード
 - au PAY カード
 - au PAY プリペイドカード
+- amazonマスターカード
 
 - スマートレシート
 - アマゾン注文履歴フィルタ(amzOrderHistoryFilter)

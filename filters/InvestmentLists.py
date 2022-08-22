@@ -32,9 +32,9 @@ class StockHistoryFilter(InvestmentFilter):
     def analyze(self, data):
 
         for csv_format in self.csv_formats:
-            skip_line = self.skip_top(data, csv_format)
-            if skip_line >= 0:
-                return [{'data': data[skip_line + 1:]}]
+            slice_line = self.slice_tops(data, csv_format)
+            if slice_line:
+                return [{'data': data[slice_line[0] + 1:]}]
 
         return None
 

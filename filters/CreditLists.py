@@ -246,6 +246,61 @@ class AmazonOrderFilter(CreditFilter):
         return super().gen_stmttrn(data, financial, account)
 
 
+class SmbcVpassFilter(CreditFilter):
+    def __init__(self):
+        super().__init__()
+        self.name = '三井住友カード'
+        self.date_format = '%Y/%m/%d'
+
+        self.csv_format = [
+            ('ご利用日', 'Date'),
+            ('ご利用店名', 'Desc'),
+            ('ご利用金額', None),
+            ('支払区分', None),
+            ('今回回数', None),
+            ('お支払い金額', 'Outgo'),
+            ('備考', 'Memo')
+        ]
+
+    def import_header(self, data, import_csv):
+        '''
+        vpassではcol説明の為のrow情報が無いのでcsvデータに項目(format)データを追加する
+        '''
+        new_data = []
+        import_header = 0
+        header = [format[0] for format in self.csv_format]
+
+        for row in data:
+            if len(row) < 3:
+                continue
+
+            if row[2] in self.import_csv:
+                new_data.append(header)
+                import_header = import_header + 1
+
+            new_data.append(row)
+
+        return import_header, new_data
+
+
+class AmazonMasterCardFilter(SmbcVpassFilter):
+    def __init__(self):
+        super().__init__()
+        self.name = 'AmazonMasterCard'
+        self.import_csv = [
+            'Ａｍａｚｏｎマスター',
+            '三井住友カードｉＤ［専用カード］'
+        ]
+
+    def analyze(self, data):
+
+        import_num, new_data = self.import_header(data, self.import_csv)
+
+        if import_num == 0:
+            return None
+
+        return super().analyze(new_data)
+
 # -------------------------------------
 
 

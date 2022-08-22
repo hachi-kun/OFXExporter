@@ -6,7 +6,9 @@
 import configparser
 import csv
 import os
+
 from datetime import datetime, timedelta, timezone
+from itertools import zip_longest
 
 
 class FilterError(Exception):
@@ -108,10 +110,20 @@ class FinanceFilter():
         self.trntype = new_trntype
 
     def analyze(self, data):
-        skip_line = self.skip_top(data, self.csv_format)
-        if skip_line >= 0:
+        slice_line = self.slice_tops(data, self.csv_format)
+        if slice_line:
+            start_line = slice_line[:]
+            if len(slice_line) >= 1:
+                end_line = slice_line[1:]
+            else:
+                end_line = []
+
             # cvsデータの先頭までスキップする
-            return [{'data': data[skip_line + 1:]}]
+            data_list = []
+            for start, end in zip_longest(start_line, end_line):
+                data_list.append({'data': data[start + 1: end]})
+
+            return data_list
         else:
             return None
 
@@ -166,7 +178,8 @@ class FinanceFilter():
             except Exception:
                 self.skip_row = self.skip_row + 1
 
-        return item_list
+        # 日付情報が無いデータを削除する
+        return [row for row in item_list if row.get('Date')]
 
     def gen_bankmsgsrsv1(self, data, financial, account):
         return None
@@ -227,12 +240,13 @@ class FinanceFilter():
         return datetime.strptime(date_str,
                                  self.date_format).replace(tzinfo=self.timezone)
 
-    def skip_top(self, data, title):
+    def slice_tops(self, data, title):
+        tops = []
 
         # カラム情報がなければエラー
         column_text = [x[0] for x in title]
         if not column_text:
-            return -1
+            return tops
 
         for index, row in enumerate(data):
 
@@ -243,10 +257,9 @@ class FinanceFilter():
             # rowデータをスライスして比較
             value = row[0:len(column_text)]
             if value == column_text:
-                return index
+                tops.append(index)
 
-        # 見つからない場合は-1を返す
-        return -1
+        return tops
 
 
 # -------------------------------------
