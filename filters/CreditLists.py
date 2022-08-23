@@ -149,25 +149,41 @@ class AUCardWalletFilter(CreditFilter):
             ('備考', 'Memo'),
         ]
 
+        self.field_type_convert = {
+            'チャージ（入金）': 'charge',
+            '払出': 'payout'
+        }
+
     def field_convert(self, field, value):
         if field in ['Type']:
-            if value in ['払出', '支払', '支払い']:
-                return 'out'
-            else:
-                return 'in'
+            return self.field_type_convert.get(value, 'payment')
         else:
             return super().field_convert(field, value)
 
     def gen_stmttrn(self, data, financial, account):
 
         for value in data:
-            if value['Type'] == 'out':
-                value['Outgo'] = value['Usage']
-            else:
+            if value['Type'] == 'charge':
                 value['Income'] = value['Usage']
+            else:
+                value['Outgo'] = value['Usage']
 
         # 後処理に渡す
         return super().gen_stmttrn(data, financial, account)
+
+
+class AUCardWalletFilterWithoutCharge(AUCardWalletFilter):
+    def __init__(self):
+        super().__init__()
+        self.name = 'au PAY プリペイド (w/o Charge)'
+
+    def gen_stmttrn(self, data, financial, account):
+
+        new_data = [value for value in data
+                    if not value['Type'] in self.field_type_convert.values()]
+
+        # 後処理に渡す
+        return super().gen_stmttrn(new_data, financial, account)
 
 
 class AUCardFilterUsage(CreditFilter):
@@ -217,14 +233,15 @@ class AmazonOrderFilter(CreditFilter):
             '（割引）'
         ]
 
-        self.incoming_type = [
-            '残高に追加済'
-        ]
+        self.filter_status_convert = {
+            '残高に追加済': 'balance'
+        }
 
     def field_convert(self, field, value):
         if field in ['Outgo2']:
             return int(value)
         elif field in ['Status']:
+            return self.filter_status_convert.get(value, 'delivered')
             return value
         elif field in ['Memo']:  # コンディション情報を消す
             if '：' in value:
@@ -239,11 +256,29 @@ class AmazonOrderFilter(CreditFilter):
         for value in data:
             if value['Desc'] in self.outgo_desc:
                 value['Outgo'] = value['Outgo2']  # 割引情報を記録する
-            elif value.get('Status') and value['Status'] in self.incoming_type:
-                value['Income'] = value.pop('Outgo')
+            elif value.get('Status') and value['Status'] == 'balance':
+                value['Income'] = value.pop('Outgo')  # ギフトを入金として扱う
 
         # 後処理に渡す
         return super().gen_stmttrn(data, financial, account)
+
+
+class AmazonOrderFilterWithoutGift(AmazonOrderFilter):
+    def __init__(self):
+        super().__init__()
+        self.name = 'Amazon 注文履歴 (w/o gift)'
+
+    def gen_stmttrn(self, data, financial, account):
+        def skip_raw(value):
+            if value.get('Status'):
+                if value['Status'] == 'balance':
+                    return True
+            return False
+
+        new_data = [value for value in data if not skip_raw(value)]
+
+        # 後処理に渡す
+        return super().gen_stmttrn(new_data, financial, account)
 
 
 class SmbcVpassFilter(CreditFilter):
